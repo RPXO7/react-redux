@@ -1,0 +1,64 @@
+{
+  "user": [
+    {
+      "name": "rp",
+      "email": "rudra.patel@metizsof.com",
+      "phone": "000000000",
+      "people": "88",
+      "eventDate": "2023-06-12",
+      "eventTime": "12:54",
+      "eventDescription": "abc",
+      "id": 1
+    },
+    {
+      "id": 2,
+      "name": "abcdefg",
+      "email": "oooo@oooo.com",
+      "phone": "1234567890",
+      "people": "99",
+      "eventDate": "2023-06-12",
+      "eventTime": "13:50",
+      "eventDescription": "asdrrw"
+    },
+    {
+      "name": "dzfv",
+      "email": "rudra.patel@metizsoft.com",
+      "phone": "1234567890",
+      "people": "55",
+      "eventDate": "2023-06-16",
+      "eventTime": "17:00",
+      "eventDescription": "drtsdesderse",
+      "id": 3
+    },
+    {
+      "id": 5,
+      "name": "ooooo",
+      "email": "oooo@oooo.com",
+      "phone": "000000000",
+      "people": "00",
+      "eventDate": "2023-06-14",
+      "eventTime": "16:33",
+      "eventDescription": "wwwwddddd"
+    },
+    {
+      "name": "Patel Rudra",
+      "email": "rudra.patel@metizsoft.com",
+      "phone": "81043 05009",
+      "people": "88",
+      "eventDate": "2023-06-13",
+      "eventTime": "17:36",
+      "eventDescription": "sdcsdcs",
+      "id": 6
+    },
+    {
+      "name": "rp",
+      "email": "rudra.patel@metizsof.com",
+      "phone": "81010 81212",
+      "people": "55",
+      "eventDate": "2023-06-07",
+      "eventTime": "15:52",
+      "eventDescription": "fghfghnfghn",
+      "id": 7
+    }
+  ]
+}
