@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
-import { Card, Col, Container, ListGroup, ListGroupItem, Row } from 'react-bootstrap'
+import { Button, Card, Col, Container, ListGroup, ListGroupItem, Row } from 'react-bootstrap'
 import DisplayCount from './DisplayCount'
 import { connect } from 'react-redux'
+import { deleteTodo } from './../Redux/actions/todo';
 
 
-const DisplayTodo = ({todos}) => {
-   
+const DisplayTodo = ({ todos, deleteTodo }) => {
+
     return (
         <Container className='mt-3'>
             <Row>
@@ -18,9 +19,15 @@ const DisplayTodo = ({todos}) => {
                             <ListGroup className='mt-2'>
                                 {
                                     todos.map((todo, index) => (
-                                        <ListGroupItem key={index}>
+                                        <ListGroupItem style={{display: 'flex',justifyContent:'space-between',}} key={index}>
+                                            <div>
                                             <h4>{todo.title}</h4>
                                             <p>{todo.description}</p>
+                                            </div>
+                                          
+                                            <div >
+                                                <Button onClick={event => deleteTodo(todo.id)} variant='danger' size='sm'>Delete</Button>
+                                            </div>
                                         </ListGroupItem>
                                     ))
                                 }
@@ -33,10 +40,12 @@ const DisplayTodo = ({todos}) => {
     )
 }
 
-const mapStateToProps=(state) =>{
-    return{todos:state.todos}
+const mapStateToProps = (state) => {
+    return { todos: state.todos }
 }
 
-const mapDispatchToProps=(dispatch)=>({})
+const mapDispatchToProps = (dispatch) => ({
+    deleteTodo: (id) => (dispatch(deleteTodo(id)))
+})
 
-export default connect(mapStateToProps, mapDispatchToProps) (DisplayTodo)
+export default connect(mapStateToProps, mapDispatchToProps)(DisplayTodo)
