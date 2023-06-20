@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 import { Button, Card, Col, Container, Form, Row } from 'react-bootstrap'
 import DisplayCount from './DisplayCount'
-// import addTodoList from '../Redux/actions/todo'
-import addTodoList from '../Redux/actions/todo'
+import { connect } from 'react-redux';
+import addTodo from '../Redux/actions/todo'
 
-const AddTodo = ({addTodoList}) => {
+
+const AddTodo = ({addTodo}) => {
 
   const [todo, setTodo] = useState({
     title: '',
@@ -13,7 +14,8 @@ const AddTodo = ({addTodoList}) => {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    addTodoList(todo)
+    localStorage.setItem('todo', JSON.stringify(todo));
+    addTodo(todo)
     console.log(todo)
     setTodo({
       title: '',
@@ -39,6 +41,7 @@ const AddTodo = ({addTodoList}) => {
                   <Form.Control
                     type='text'
                     placeholder='Enter here'
+                    required
                     value={todo.title}
                     onChange={event => setTodo({ ...todo, title: event.target.value })}
                   />
@@ -49,6 +52,7 @@ const AddTodo = ({addTodoList}) => {
                   <Form.Control as={'textarea'}
                     type='text'
                     placeholder='Enter here'
+                    required
                     value={todo.description}
                     onChange={event => setTodo({ ...todo, description: event.target.value })}
                   />
@@ -72,8 +76,8 @@ const AddTodo = ({addTodoList}) => {
 const mapStateToProps=(state)=>({})
 
 const mapDispatchToProps=(dispatch)=>({
-  addTodoListList:(todo)=>(dispatch(addTodoList(todo)))
+  addTodo:(todo)=>(dispatch(addTodo(todo)))
 })
 
 
-export default AddTodo
+export default connect(mapStateToProps, mapDispatchToProps) (AddTodo)
